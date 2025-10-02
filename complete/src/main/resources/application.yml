@@ -9,10 +9,13 @@ spring:
 ribbon:
   ServerListRefreshInterval: 1000
 
-endpoints:
-  health:
-    sensitive: false
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
